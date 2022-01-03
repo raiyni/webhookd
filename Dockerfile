@@ -43,7 +43,7 @@ RUN adduser \
     "$USER"
 
 # Install deps
-RUN apk add --no-cache bash gcompat git openssh-client curl jq ssmtp mailutils
+RUN apk add --no-cache bash gcompat git openssh-client curl jq ssmtp 
 
 # Install docker-compose
 RUN curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/master/run.sh \
