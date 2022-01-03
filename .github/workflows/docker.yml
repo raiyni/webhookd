@@ -21,7 +21,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ncarlier/webhookd
+          images: raiyni/webhookd
           tags: |
             type=edge
             type=semver,pattern={{version}}
