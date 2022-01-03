@@ -44,6 +44,7 @@ RUN adduser \
 
 # Install deps
 RUN apk add --no-cache bash gcompat git openssh-client curl jq ssmtp 
+RUN apk add nodejs-current
 
 # Install docker-compose
 RUN curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/master/run.sh \
