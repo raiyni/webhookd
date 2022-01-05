@@ -46,6 +46,10 @@ RUN adduser \
 RUN apk add --no-cache bash gcompat git openssh-client curl jq ssmtp 
 RUN apk add nodejs-current
 
+RUN curl -L https://www.npmjs.com/install.sh | sh
+
+npm install -g nodemailer
+
 # Install docker-compose
 RUN curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/master/run.sh \
      -o /usr/local/bin/docker-compose && \
