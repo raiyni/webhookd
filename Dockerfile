@@ -48,7 +48,7 @@ RUN apk add nodejs-current
 
 RUN curl -L https://www.npmjs.com/install.sh | sh
 
-npm install -g nodemailer
+RUN npm install -g nodemailer
 
 # Install docker-compose
 RUN curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/master/run.sh \
