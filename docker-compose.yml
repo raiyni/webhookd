@@ -8,5 +8,5 @@ services:
       - '/var/opt/webhookd/:/var/opt/webhookd/'
       - '/etc/ssmtp/ssmtp.conf:/etc/ssmtp/ssmtp.conf'
     ports:
-      - '8000:8080'
+      - '127.0.0.1:8000:8080'
     command: ['webhookd', '--scripts', '/var/opt/webhookd/scripts']
