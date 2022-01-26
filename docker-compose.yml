@@ -1,14 +1,14 @@
-version: "3.5"
-
+version: '3.8'
 services:
   webhookd:
-    hostname: webhookd
-    image: ncarlier/webhookd:latest
-    container_name: webhookd
     restart: always
-    ports:
-    - "8080:8080"
-    environment:
-    - WHD_SCRIPTS=/scripts
+    container_name: webhookd
+    image: raiyni/webhookd:edge
     volumes:
-    - ./scripts:/scripts
+      - '/var/opt/webhookd/:/var/opt/webhookd/'
+      - '/etc/ssmtp/ssmtp.conf:/etc/ssmtp/ssmtp.conf'
+    ports:
+      - '8000:8080'
+    environment:
+      - WHD_PASSWD_FILE=/var/opt/webhookd/.htpasswd
+    command: ['webhookd', '--scripts', '/var/opt/webhookd/scripts']
