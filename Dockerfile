@@ -21,7 +21,7 @@ RUN make
 #########################################
 # Distribution stage
 #########################################
-FROM node:current-alpine AS slim
+FROM node:current-alpine 
 
 # Repository location
 ARG REPOSITORY=github.com/ncarlier
