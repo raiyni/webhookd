@@ -21,7 +21,7 @@ RUN make
 #########################################
 # Distribution stage
 #########################################
-FROM node:current-alpine 
+FROM alpine:latest 
 
 # Repository location
 ARG REPOSITORY=github.com/ncarlier
@@ -44,6 +44,9 @@ RUN adduser \
 
 # Install deps
 RUN apk add --no-cache bash gcompat curl jq ssmtp
+
+RUN apk add nodejs-current
+RUN curl -L https://www.npmjs.com/install.sh | sh
 RUN npm install -g nodemailer
 
 # Install binary
