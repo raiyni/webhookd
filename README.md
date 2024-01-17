@@ -1,10 +1,5 @@
 # webhookd
 
-[![Build Status](https://github.com/ncarlier/webhookd/actions/workflows/build.yml/badge.svg)](https://github.com/ncarlier/webhookd/actions/workflows/build.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/ncarlier/webhookd)](https://goreportcard.com/report/github.com/ncarlier/webhookd)
-[![Docker pulls](https://img.shields.io/docker/pulls/ncarlier/webhookd.svg)](https://hub.docker.com/r/ncarlier/webhookd/)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/nunux)
-
 A very simple webhook server to launch shell scripts.
 
 ![Logo](webhookd.svg)
@@ -33,14 +28,13 @@ $ curl -sf https://gobinaries.com/ncarlier/webhookd | sh
 
 ```bash
 $ docker run -d --name=webhookd \
-  -v ${PWD}/scripts:/var/opt/webhookd/scripts \
+  -v ${PWD}/scripts:/scripts \
   -p 8080:8080 \
-  ncarlier/webhookd \
-  webhookd --scripts=/var/opt/webhookd/scripts
+  ncarlier/webhookd
 ```
 
-> Note: This image extends `docker:dind` Docker image.
-> Therefore you are able to interact with a Docker daemon with yours shell scripts.
+> Note: The official Docker image is lightweight and allows to run simple scripts but for more advanced needs you can use the `ncarlier/webhookd:edge-distrib` image.
+> For example, with this `distrib` image, you can interact with your Docker daemon using Docker CLI or Docker Compose.
 
 **Or** use APT:
 
