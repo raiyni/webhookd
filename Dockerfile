@@ -43,7 +43,7 @@ RUN adduser \
     "$USER"
 
 # Install deps
-RUN apk add --no-cache bash gcompat curl jq ssmtp
+RUN apk add --no-cache bash gcompat curl jq ssmtp openssl
 
 RUN apk add nodejs-current
 RUN curl -L https://www.npmjs.com/install.sh | sh
